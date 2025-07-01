@@ -30,10 +30,10 @@ amp_hist_pts = amp_hist_rs * 1000
 amp_garch_pts = amp_garch_rs * 1000
 
 # Exibição
-st.metric("📈 Preço atual (R$)", f"{preco:.4f}")
-st.metric("📉 Volatilidade diária (histórica)", f"{vol_hist*100:.2f}%")
-st.metric("📉 Volatilidade diária (GARCH)", f"{sigma_garch*100:.2f}%")
-st.metric("🎯 Amplitude esperada (histórica)", f"{amp_hist_pts:.2f} pts")
-st.metric("🎯 Amplitude esperada (GARCH)", f"{amp_garch_pts:.2f} pts")
+st.metric(label="📈 Preço atual (R$)", value=f"R$ {preco:.4f}")
+st.metric(label="📉 Volatilidade histórica", value=f"{vol_hist * 100:.2f}%")
+st.metric(label="📉 Volatilidade GARCH", value=f"{sigma_garch * 100:.2f}%")
+st.metric(label="🎯 Amplitude esperada (histórica)", value=f"{amp_hist_pts:.2f} pts")
+st.metric(label="🎯 Amplitude esperada (GARCH)", value=f"{amp_garch_pts:.2f} pts")
 
 st.caption("Últimos dados com base em BRL=X (Yahoo Finance).")
